@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Расчет осадков</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="js/jquery.datetimepicker.css">
+</head>
+<body>
+    <div class="wrap" onclick="showCalculateForm('none')"></div>
+    <div class="calculate">
+            <form class="calculate-form" method="POST" name="form" id="form">
+                <span class="close" onclick="showCalculateForm('none')">x</span>
+                <div class="calculate-form-group">
+                    <label for="date-time-begin">Диапазон с:</label>
+                    <input id="date-time-begin" name="date-time-begin" type="text" pattern="(\d{4})-(\d{2})-(\d{2})" value="" autocomplete="off" required>
+                </div>
+                <div class="calculate-form-group">
+                    <label for="date-time-end">До:</label>
+                    <input id="date-time-end" name="date-time-end" type="text" pattern="(\d{4})-(\d{2})-(\d{2})" value="" autocomplete="off" required>
+                </div>
+                <div class="calculate-form-group">
+                    <label for="form-limit">Пороговое значение:</label>
+                    <input type="text" name="form-limit" id="form-limit" value="1.1" readonly>
+                </div>
+                <input type="submit" name="form-btn" value="Рассчитать осадки">
+            </form>
+    </div>
+    <div class="main">
+        <div class="menu">
+            <ul class="main-menu">
+                <li class="active"><a class="btn" href="javascript:void(0);" onclick="showCalculateForm('block')">Выбрать другой период</a></li>
+                <li><a href="javascript:void(0);" onclick="showTable('1001');">КНС Комендантский аэродром</a></li>
+                <li><a href="javascript:void(0);" onclick="showTable('1002');">Северная станция аэрации</a></li>
+                <li><a href="javascript:void(0);" onclick="showTable('1003');">КОС Кронштадт</a></li>
+                <li><a href="javascript:void(0);" onclick="showTable('1004');">ВНС Песочная</a></li>
+                <li><a href="javascript:void(0);" onclick="showTable('1005');">ВНС Парнас</a></li>
+                <li><a href="javascript:void(0);" onclick="showTable('1006');">ВНС Ломоносов</a></li>
+                <li><a href="javascript:void(0);" onclick="showTable('1007');">ВНС Заячий Ремиз</a></li>
+                <li><a href="javascript:void(0);" onclick="showTable('1008');">Красносельская станция аэрации</a></li>
+                <li><a href="javascript:void(0);" onclick="showTable('1009');">Юго-Западные очистные сооружения</a></li>
+                <li><a href="javascript:void(0);" onclick="showTable('1010');">ВС Колпинская</a></li>
+                <li><a href="javascript:void(0);" onclick="showTable('1011');">ВНС 4-й подъем</a></li>
+                <li><a href="javascript:void(0);" onclick="showTable('1012');">КНС Московская славянка</a></li>
+                <li><a href="javascript:void(0);" onclick="showTable('1013');">КОС Пушкин</a></li>
+                <li><a href="javascript:void(0);" onclick="showTable('1014');">Северная ВС</a></li>
+                <li><a href="javascript:void(0);" onclick="showTable('1015');">Главная водопроводная станция 2П</a></li>
+                <li><a href="javascript:void(0);" onclick="showTable('1016');">ВС Дудерговская</a></li>
+                <li><a href="javascript:void(0);" onclick="showTable('1017');">Стационарный снегоплавильный пункт</a></li>
+                <li><a href="javascript:void(0);" onclick="showTable('1018');">КОС Зеленогорск</a></li>
+                <li><a href="javascript:void(0);" onclick="showTable('1019');">КОС Репино</a></li>
+                <li><a href="javascript:void(0);" onclick="showTable('1020');">КНС Иловые площадки</a></li>
+                <li><a href="javascript:void(0);" onclick="showTable('1021');">ВНС Кушелевская</a></li>
+                <li><a href="javascript:void(0);" onclick="showTable('1022');">ВНС Муринская</a></li>
+                <li><a href="javascript:void(0);" onclick="showTable('1023');">ВНС Стрельна</a></li>
+                <li><a href="javascript:void(0);" onclick="showTable('1024');">Центральная станция аэрации</a></li>
+                <li><a href="javascript:void(0);" onclick="showTable('1025');">КОС Сестрорецк</a></li>
+                <li><a href="javascript:void(0);" onclick="showTable('1026');">ВС Волковская</a></li>
+                <li><a href="javascript:void(0);" onclick="showTable('1027');">ВНС Московская</a></li>
+                <li><a href="javascript:void(0);" onclick="showTable('1028');">Южная ВС</a></li>
+                <li><a href="javascript:void(0);" onclick="showTable('1029');">КОС Металлострой</a></li>
+                <li><a href="javascript:void(0);" onclick="showTable('1030');">ВНС Пулковская</a></li>
+                <li><a href="javascript:void(0);" onclick="showTable('1031');">ПНС Волхонка</a></li>
+                <li><a href="javascript:void(0);" onclick="showTable('1032');">ВНС Горская</a></li>
+                <li><a href="javascript:void(0);" onclick="showTable('1034');">ФГБУ СЗУГМС</a></li>
+                <li><a href="javascript:void(0);" onclick="showTable('1035');">ГГО Воейково</a></li>
+            </ul>
+        </div>
+        <div class="precipitation-table">
+        </div>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.datetimepicker.full.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
