@@ -81,10 +81,6 @@ const controlGauges = async () => {
 
     const tableContainer = document.querySelector('.precipitation-table');
 
-    // Скрываем серый фон и форму ввода данных
-    document.querySelector('.calculate').style.display = 'none';
-    document.querySelector('.wrap').style.display = 'none';
-
     // Очищаем предыдущие данные
     document.querySelector('.precipitation-table').innerHTML = ' ';
 
@@ -109,12 +105,6 @@ document.getElementById('form').addEventListener('submit', e => {
     e.preventDefault();
     controlGauges();
 });
-
-// Функция для отображения формы расчета сумм осадков
-const showCalculateForm = state => {
-    document.querySelector('.calculate').style.display = state;
-    document.querySelector('.wrap').style.display = state;
-}
 
 // Функция для отображения таблицы для выбранного пункта
 const showTable = gaugeid => {
