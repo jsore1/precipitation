@@ -76,11 +76,81 @@ class Gauges {
         let menuString;
         menuString = ``;
         if (this.result.length !== 0) {
-            for (let j = 1010; j < 1036; j++) {
+            for (let j = 1001; j < 1036; j++) {
                 switch (j) {
+                    case 1001:
+                        menuString += `
+                        <li><a href="javascript:void(0);" onclick="showTable('1001');">КНС Комендантский аэродром</a></li>
+                        `;
+                        break;
+                    case 1002:
+                        menuString += `
+                        <li><a href="javascript:void(0);" onclick="showTable('1002');">Северная станция аэрации</a></li>
+                        `;
+                        break;
+                    case 1003:
+                        menuString += `
+                        <li><a href="javascript:void(0);" onclick="showTable('1003');">КОС Кронштадт</a></li>
+                        `;
+                        break;
+                    case 1004:
+                        menuString += `
+                        <li><a href="javascript:void(0);" onclick="showTable('1004');">ВНС Песочная</a></li>
+                        `;
+                        break;
+                    case 1005:
+                        menuString += `
+                        <li><a href="javascript:void(0);" onclick="showTable('1005');">ВНС Парнас</a></li>
+                        `;
+                        break;
+                    case 1006:
+                        menuString += `
+                        <li><a href="javascript:void(0);" onclick="showTable('1006');">ВНС Ломоносов</a></li>
+                        `;
+                        break;
+                    case 1007:
+                        menuString += `
+                        <li><a href="javascript:void(0);" onclick="showTable('1007');">ВНС Заячий Ремиз</a></li>
+                        `;
+                        break;
+                    case 1008:
+                        menuString += `
+                        <li><a href="javascript:void(0);" onclick="showTable('1008');">Красносельская станция аэрации</a></li>
+                        `;
+                        break;
+                    case 1009:
+                        menuString += `
+                        <li><a href="javascript:void(0);" onclick="showTable('1009');">Юго-Западные очистные сооружения</a></li>
+                        `;
+                        break;
                     case 1010:
                         menuString += `
                         <li><a href="javascript:void(0);" onclick="showTable('1010');">ВС Колпинская</a></li>
+                        `;
+                        break;
+                    case 1011:
+                        menuString += `
+                        <li><a href="javascript:void(0);" onclick="showTable('1011');">ВНС 4-й подъем</a></li>
+                        `;
+                        break;
+                    case 1012:
+                        menuString += `
+                        <li><a href="javascript:void(0);" onclick="showTable('1012');">КНС Московская славянка</a></li>
+                        `;
+                        break;
+                    case 1013:
+                        menuString += `
+                        <li><a href="javascript:void(0);" onclick="showTable('1013');">КОС Пушкин</a></li>
+                        `;
+                        break;
+                    case 1014:
+                        menuString += `
+                        <li><a href="javascript:void(0);" onclick="showTable('1014');">Северная ВС</a></li>
+                        `;
+                        break;
+                    case 1015:
+                        menuString += `
+                        <li><a href="javascript:void(0);" onclick="showTable('1015');">Главная водопроводная станция 2П</a></li>
                         `;
                         break;
                     case 1016:
@@ -88,9 +158,79 @@ class Gauges {
                         <li><a href="javascript:void(0);" onclick="showTable('1016');">ВС Дудерговская</a></li>
                         `;
                         break;
+                    case 1017:
+                        menuString += `
+                        <li><a href="javascript:void(0);" onclick="showTable('1017');">Стационарный снегоплавильный пункт</a></li>
+                        `;
+                        break;
+                    case 1018:
+                        menuString += `
+                        <li><a href="javascript:void(0);" onclick="showTable('1018');">КОС Зеленогорск</a></li>
+                        `;
+                        break;
+                    case 1019:
+                        menuString += `
+                        <li><a href="javascript:void(0);" onclick="showTable('1019');">КОС Репино</a></li>
+                        `;
+                        break;
+                    case 1020:
+                        menuString += `
+                        <li><a href="javascript:void(0);" onclick="showTable('1020');">КНС Иловые площадки</a></li>
+                        `;
+                        break;
+                    case 1021:
+                        menuString += `
+                        <li><a href="javascript:void(0);" onclick="showTable('1021');">ВНС Кушелевская</a></li>
+                        `;
+                        break;
+                    case 1022:
+                        menuString += `
+                        <li><a href="javascript:void(0);" onclick="showTable('1022');">ВНС Муринская</a></li>
+                        `;
+                        break;
+                    case 1023:
+                        menuString += `
+                        <li><a href="javascript:void(0);" onclick="showTable('1023');">ВНС Стрельна</a></li>
+                        `;
+                        break;
+                    case 1024:
+                        menuString += `
+                        <li><a href="javascript:void(0);" onclick="showTable('1024');">Центральная станция аэрации</a></li>
+                        `;
+                        break;
+                    case 1025:
+                        menuString += `
+                        <li><a href="javascript:void(0);" onclick="showTable('1025');">КОС Сестрорецк</a></li>
+                        `;
+                        break;
+                    case 1026:
+                        menuString += `
+                        <li><a href="javascript:void(0);" onclick="showTable('1026');">ВС Волковская</a></li>
+                        `;
+                        break;
+                    case 1027:
+                        menuString += `
+                        <li><a href="javascript:void(0);" onclick="showTable('1027');">ВНС Московская</a></li>
+                        `;
+                        break;
+                    case 1028:
+                        menuString += `
+                        <li><a href="javascript:void(0);" onclick="showTable('1028');">Южная ВС</a></li>
+                        `;
+                        break;
+                    case 1029:
+                        menuString += `
+                        <li><a href="javascript:void(0);" onclick="showTable('1029');">КОС Металлострой</a></li>
+                        `;
+                        break;
                     case 1030:
                         menuString += `
                         <li><a href="javascript:void(0);" onclick="showTable('1030');">ВНС Пулковская</a></li>
+                        `;
+                        break;
+                    case 1031:
+                        menuString += `
+                        <li><a href="javascript:void(0);" onclick="showTable('1031');">ПНС Волхонка</a></li>
                         `;
                         break;
                     case 1032:
@@ -101,6 +241,11 @@ class Gauges {
                     case 1034:
                         menuString += `
                         <li><a href="javascript:void(0);" onclick="showTable('1034');">ФГБУ СЗУГМС</a></li>
+                        `;
+                        break;
+                    case 1035:
+                        menuString += `
+                        <li><a href="javascript:void(0);" onclick="showTable('1034');">ГГО Воейково</a></li>
                         `;
                         break;
                     default:
