@@ -8,62 +8,61 @@
 </head>
 <body>
     <div class="main">
-        <div class="menu">
-            <ul class="main-menu">
-                <li><a href="javascript:void(0);" onclick="showTable('1010');">КНС Комендантский аэродром</a></li>
-                <li><a href="javascript:void(0);" onclick="showTable('1016');">Северная станция аэрации</a></li>
-                <li><a>КОС Кронштадт</a></li>
-                <li><a>ВНС Песочная</a></li>
-                <li><a>ВНС Парнас</a></li>
-                <li><a>ВНС Ломоносов</a></li>
-                <li><a>ВНС Заячий Ремиз</a></li>
-                <li><a>Красносельская станция аэрации</a></li>
-                <li><a>Юго-Западные очистные сооружения</a></li>
-                <li><a>ВС Колпинская</a></li>
-                <li><a>ВНС 4-й подъем</a></li>
-                <li><a>КНС Московская славянка</a></li>
-                <li><a>КОС Пушкин</a></li>
-                <li><a>Северная ВС</a></li>
-                <li><a>Главная водопроводная станция 2П</a></li>
-                <li><a>ВС Дудерговская</a></li>
-                <li><a>Стационарный снегоплавильный пункт</a></li>
-                <li><a>КОС Зеленогорск</a></li>
-                <li><a>КОС Репино</a></li>
-                <li><a>КНС Иловые площадки</a></li>
-                <li><a>ВНС Кушелевская</a></li>
-                <li><a>ВНС Муринская</a></li>
-                <li><a>ВНС Стрельна</a></li>
-                <li><a>Центральная станция аэрации</a></li>
-                <li><a>КОС Сестрорецк</a></li>
-                <li><a>ВС Волковская</a></li>
-                <li><a>ВНС Московская</a></li>
-                <li><a>Южная ВС</a></li>
-                <li><a>КОС Металлострой</a></li>
-                <li><a>ВНС Пулковская</a></li>
-                <li><a>ПНС Волхонка</a></li>
-                <li><a>ВНС Горская</a></li>
-                <li><a>ФГБУ СЗУГМС</a></li>
-                <li><a>ГГО Воейково</a></li>
-            </ul>
-        </div>
-        <div class="calculate">
-                <form class="calculate-form" method="POST" name="form" id="form">
-                    <div class="calculate-form-group">
-                        <label for="date-time-begin">Диапазон с:</label>
-                        <input id="date-time-begin" name="date-time-begin" type="text" pattern="(\d{4})-(\d{2})-(\d{2})" value="" autocomplete="off" required>
-                    </div>
-                    <div class="calculate-form-group">
-                        <label for="date-time-end">До:</label>
-                        <input id="date-time-end" name="date-time-end" type="text" pattern="(\d{4})-(\d{2})-(\d{2})" value="" autocomplete="off" required>
-                    </div>
-                    <div class="calculate-form-group">
-                        <label for="form-limit">Пороговое значение:</label>
-                        <input type="text" name="form-limit" id="form-limit" value="1.1" readonly>
-                    </div>
-                    <input type="submit" name="form-btn" value="Рассчитать осадки">
-                </form>
-        </div>
+        <form class="calculate-form" method="POST" name="form" id="form">
+            <div class="calculate-form-group">
+                <label for="date-time-begin">Диапазон с:</label>
+                <input id="date-time-begin" name="date-time-begin" type="text" pattern="(\d{4})-(\d{2})-(\d{2})" value="" autocomplete="off" required>
+            </div>
+            <div class="calculate-form-group">
+                <label for="date-time-end">До:</label>
+                <input id="date-time-end" name="date-time-end" type="text" pattern="(\d{4})-(\d{2})-(\d{2})" value="" autocomplete="off" required>
+            </div>
+            <div class="calculate-form-group">
+                <label for="form-limit">Пороговое значение:</label>
+                <input type="text" name="form-limit" id="form-limit" value="1.1" readonly>
+            </div>
+            <input type="submit" name="form-btn" value="Рассчитать осадки">
+        </form>
+        <ul class="main-menu">
+            <!--
+            <li><a href="javascript:void(0);" onclick="showTable('1010');">КНС Комендантский аэродром</a></li>
+            <li><a href="javascript:void(0);" onclick="showTable('1016');">Северная станция аэрации</a></li>
+            <li><a>КОС Кронштадт</a></li>
+            <li><a>ВНС Песочная</a></li>
+            <li><a>ВНС Парнас</a></li>
+            <li><a>ВНС Ломоносов</a></li>
+            <li><a>ВНС Заячий Ремиз</a></li>
+            <li><a>Красносельская станция аэрации</a></li>
+            <li><a>Юго-Западные очистные сооружения</a></li>
+            <li><a>ВС Колпинская</a></li>
+            <li><a>ВНС 4-й подъем</a></li>
+            <li><a>КНС Московская славянка</a></li>
+            <li><a>КОС Пушкин</a></li>
+            <li><a>Северная ВС</a></li>
+            <li><a>Главная водопроводная станция 2П</a></li>
+            <li><a>ВС Дудерговская</a></li>
+            <li><a>Стационарный снегоплавильный пункт</a></li>
+            <li><a>КОС Зеленогорск</a></li>
+            <li><a>КОС Репино</a></li>
+            <li><a>КНС Иловые площадки</a></li>
+            <li><a>ВНС Кушелевская</a></li>
+            <li><a>ВНС Муринская</a></li>
+            <li><a>ВНС Стрельна</a></li>
+            <li><a>Центральная станция аэрации</a></li>
+            <li><a>КОС Сестрорецк</a></li>
+            <li><a>ВС Волковская</a></li>
+            <li><a>ВНС Московская</a></li>
+            <li><a>Южная ВС</a></li>
+            <li><a>КОС Металлострой</a></li>
+            <li><a>ВНС Пулковская</a></li>
+            <li><a>ПНС Волхонка</a></li>
+            <li><a>ВНС Горская</a></li>
+            <li><a>ФГБУ СЗУГМС</a></li>
+            <li><a>ГГО Воейково</a></li>-->
+        </ul>
         <div class="precipitation-table">
+        </div>
+        <div class="render">
         </div>
     </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
