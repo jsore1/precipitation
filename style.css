@@ -1,31 +1,30 @@
 .main {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
-.main-menu {
+ul.main-menu {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch;
-}
-
-ul {
+    flex-direction: column;
     list-style: none;
     margin: 0px;
     padding: 0px;
+    font-size: 18px;
 }
 
-a {
+ul a {
     display: block;
     text-decoration: none;
     color: black;
-    border: 1px solid grey;
-    border-radius: 10px;
     background-color: lightgray;
-    margin-bottom: 5px;
     padding: 5px;
-    margin-right: 10px;
+    border: 2px solid gray;
+}
+
+ul a:first-child {
+    margin-top: -2px;
 }
 
 .calculate-form {
@@ -33,7 +32,8 @@ a {
     flex-wrap: wrap;
     justify-content: center;
     align-items: stretch;
-    margin-top: 5px;
+    margin: 5px 0;
+    width: 100%;
 }
 
 label {
@@ -54,10 +54,11 @@ input {
 }
 
 .precipitation-table {
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    margin-top: 10px;
+    margin-left: 20%;
+}
+
+.render {
+    margin-left: 25%;
 }
 
 table {
@@ -66,13 +67,13 @@ table {
 }
 
 td {
-    border: 1px solid #a8a8a8;
+    border: 1px solid gray;
     padding: 5px;
     text-align: center;
 }
 
 tr:nth-child(2n) {
-    background-color: #e5e5e5;
+    background-color: lightgray;
 }
 
 .loader {
@@ -83,7 +84,7 @@ tr:nth-child(2n) {
 .loader svg {
     height: 5.5rem;
     width: 5.5rem;
-    fill: #0088cc;
+    fill: gray;
     transform-origin: 44% 50%;
     animation: rotate 1.5s infinite linear;
 }
