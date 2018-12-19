@@ -71,6 +71,47 @@ class Gauges {
             return tableString += `<b>За этот период нет данных</b>`;
         }
     }
+
+    createMenu() {
+        let menuString;
+        menuString = ``;
+        if (this.result.length !== 0) {
+            for (let j = 1010; j < 1036; j++) {
+                switch (j) {
+                    case 1010:
+                        menuString += `
+                        <li><a href="javascript:void(0);" onclick="showTable('1010');">ВС Колпинская</a></li>
+                        `;
+                        break;
+                    case 1016:
+                        menuString += `
+                        <li><a href="javascript:void(0);" onclick="showTable('1016');">ВС Дудерговская</a></li>
+                        `;
+                        break;
+                    case 1030:
+                        menuString += `
+                        <li><a href="javascript:void(0);" onclick="showTable('1030');">ВНС Пулковская</a></li>
+                        `;
+                        break;
+                    case 1032:
+                        menuString += `
+                        <li><a href="javascript:void(0);" onclick="showTable('1032');">ВНС Горская</a></li>
+                        `;
+                        break;
+                    case 1034:
+                        menuString += `
+                        <li><a href="javascript:void(0);" onclick="showTable('1034');">ФГБУ СЗУГМС</a></li>
+                        `;
+                        break;
+                    default:
+                        continue;
+                }
+            }
+            return menuString;
+        } else {
+            return menuString;
+        }
+    }
 }
 
 const state = {};
@@ -80,12 +121,17 @@ const controlGauges = async () => {
     state.gauges = new Gauges();
 
     const tableContainer = document.querySelector('.precipitation-table');
+    const renderContainer = document.querySelector('.render');
 
     // Очищаем предыдущие данные
-    document.querySelector('.precipitation-table').innerHTML = ' ';
+    tableContainer.innerHTML = ' ';
+    document.querySelector('.main-menu').innerHTML = ' ';
+
+    // Скрываем форму расчета осадков на время загрузки данных
+    document.querySelector('.calculate-form').style.display = 'none';
 
     // Отображаем загрузку данных
-    renderLoader(tableContainer);
+    renderLoader(renderContainer);
 
     // Ждем ответа от osadki.php с данными в формате json
     await state.gauges.getResult();
@@ -93,11 +139,18 @@ const controlGauges = async () => {
     // Удаляем загрузчик
     clearLoader();
 
+    // Возвращаем форму расчета осадков
+    document.querySelector('.calculate-form').style.display = 'flex';
+
+    const menu = state.gauges.createMenu();
+
+    document.querySelector('.main-menu').insertAdjacentHTML('beforeend', menu);
+
     // Создаем таблицы с данными и записываем в переменную table
     const table = state.gauges.createTables();
 
     // Вставляем текущие данные
-    document.querySelector('.precipitation-table').insertAdjacentHTML('beforeend', table);
+    tableContainer.insertAdjacentHTML('beforeend', table);
 }
 
 // Обработчик события submit
