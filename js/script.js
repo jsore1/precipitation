@@ -10,7 +10,7 @@ class Gauges {
                 config: { headers: {'Content-Type': 'multipart/form-data' }}
             });
             this.result = JSON.parse(res.data);
-            console.log(res.data);
+            // console.log(this.result[0].gauge);
         } catch (error) {
             console.log(error);
         }
