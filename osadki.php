@@ -58,7 +58,7 @@ class DataBase {
 }
 
 /**
- * 
+ *
  */
 class Gauge {
     public function __construct($id, $date, $time, $value, $dateTimeBegin, $dateTimeEnd) {
@@ -180,13 +180,18 @@ class Gauge {
     }
 }
 // Создаем объект типа DataBase с настройками нашей базы
-$dataBase = new DataBase('test', 'localhost', 'jsore', '12345678');
+$dataBase = new DataBase('test', 'osadki.my', 'phpmyadmin', '12345678');
 
 // Принимаем post запросом период времени со странички
 $dateTimeBegin = htmlentities($_POST['date-time-begin']);
+// $dateTimeBegin = '2018-05-01';
 $dateTimeEnd = htmlentities($_POST['date-time-end']);
+// $dateTimeEnd = '2018-05-05';
 $limitValue = htmlentities($_POST['form-limit']);
+// $limitValue = 1.1;
+
 $arrayNew = [];
+$newArray = [];
 
 for ($i = 1001; $i <= 1035; $i++) {
     if ($i != 1033) {
@@ -199,15 +204,18 @@ for ($i = 1001; $i <= 1035; $i++) {
 
         if (count($arrayGauge[1]) != 0) {
             $gauge = new Gauge($numberPk, $arrayGauge[0], $arrayGauge[1], $arrayGauge[2], $dateTimeBegin, $dateTimeEnd);
-        
+
             $arraySum = $gauge->calculateSum();
             $arrayFilt = $gauge->filterSum($arraySum, $limitValue);
-            
-            $arrayNew["gauge_$numberPk"] = $arrayFilt;
-            //$arrayNew["gauge_$numberPk"] = $arrayFilt[1];
+
+            $arrayNew["gauge"] = $numberPk;
+            $arrayNew["arrayRange"] = $arrayFilt[0];
+            $arrayNew["arrayValue"] = $arrayFilt[1];
+
+            array_push($newArray, $arrayNew);
 
 
         }
     }
 }
-echo json_encode(json_encode($arrayNew));
+echo json_encode(json_encode($newArray));

@@ -10,7 +10,7 @@ class Gauges {
                 config: { headers: {'Content-Type': 'multipart/form-data' }}
             });
             this.result = JSON.parse(res.data);
-            //console.log(res.data);
+            console.log(res.data);
         } catch (error) {
             console.log(error);
         }
@@ -169,7 +169,7 @@ class Gauges {
                 menuString += `
                 <li><a href="javascript:void(0);" onclick="showTable('1001');">КНС Комендантский аэродром</a></li>
                 `;
-            } 
+            }
             if (typeof this.result.gauge_1002 !== "undefined") {
                 menuString += `
                 <li><a href="javascript:void(0);" onclick="showTable('1002');">Северная станция аэрации</a></li>
@@ -389,15 +389,13 @@ document.getElementById('form').addEventListener('submit', e => {
 
 // Функция для отображения таблицы для выбранного пункта
 const showTable = gaugeid => {
-    let table;
-    let gauge;
+    const table = document.getElementsByTagName('table');
+    const gauge = document.querySelector(`.gauge-${gaugeid}`);
     const info = document.querySelector('.info');
     if (info) {
         info.parentElement.removeChild(info);
     }
     if (document.querySelector(`.gauge-${gaugeid}`)) {
-        gauge = document.querySelector(`.gauge-${gaugeid}`);
-        table = document.getElementsByTagName('table');
         for (let i = 0; i < table.length; i++) {
             table[i].style.display = 'none';
         }
