@@ -342,6 +342,7 @@ class Gauges {
               continue;
             }
           }
+          return menuString;
         } else {
           return menuString = ``;
         }
