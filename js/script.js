@@ -1,4 +1,42 @@
 class Gauges {
+
+    gaugeName: [
+        'КНС Комендантский аэродром',
+        'Северная станция аэрации',
+        'КОС Кронштадт',
+        'ВНС Песочная',
+        'ВНС Парнас',
+        'ВНС Ломоносов',
+        'ВНС Заячий Ремиз',
+        'Красносельская станция аэрации',
+        'Юго-Западные очистные сооружения',
+        'ВС Колпинская',
+        'ВНС 4-й подъем',
+        'КНС Московская славянка',
+        'КОС Пушкин',
+        'Северная ВС',
+        'Главная водопроводная станция 2П',
+        'ВС Дудерговская',
+        'Стационарный снегоплавильный пункт',
+        'КОС Зеленогорск',
+        'КОС Репино',
+        'КНС Иловые площадки',
+        'ВНС Кушелевская',
+        'ВНС Муринская',
+        'ВНС Стрельна',
+        'Центральная станция аэрации',
+        'КОС Сестрорецк',
+        'ВС Волковская',
+        'ВНС Московская',
+        'Южная ВС',
+        'КОС Металлострой',
+        'ВНС Пулковская',
+        'ПНС Волхонка',
+        'ВНС Горская',
+        'ФГБУ СЗУГМС',
+        'ГГО Воейково'
+    ];
+
     async getResult() {
         const formData = new FormData(document.forms.form);
 
@@ -16,152 +54,6 @@ class Gauges {
         }
     }
 
-
-    // createTables() {
-    //     let tableString;
-    //     tableString = ``;
-    //     if (this.result.length !== 0) {
-    //         for (let j = 1001; j < 1036; j++) {
-    //             let gauges;
-    //             switch (j) {
-    //                 case 1001:
-    //                     gauges = this.result.gauge_1001;
-    //                     break;
-    //                 case 1002:
-    //                     gauges = this.result.gauge_1002;
-    //                     break;
-    //                 case 1003:
-    //                     gauges = this.result.gauge_1003;
-    //                     break;
-    //                 case 1004:
-    //                     gauges = this.result.gauge_1004;
-    //                     break;
-    //                 case 1005:
-    //                     gauges = this.result.gauge_1005;
-    //                     break;
-    //                 case 1006:
-    //                     gauges = this.result.gauge_1006;
-    //                     break;
-    //                 case 1007:
-    //                     gauges = this.result.gauge_1007;
-    //                     break;
-    //                 case 1008:
-    //                     gauges = this.result.gauge_1008;
-    //                     break;
-    //                 case 1009:
-    //                     gauges = this.result.gauge_1009;
-    //                     break;
-    //                 case 1010:
-    //                     gauges = this.result.gauge_1010;
-    //                     break;
-    //                 case 1011:
-    //                     gauges = this.result.gauge_1011;
-    //                     break;
-    //                 case 1012:
-    //                     gauges = this.result.gauge_1012;
-    //                     break;
-    //                 case 1013:
-    //                     gauges = this.result.gauge_1013;
-    //                     break;
-    //                 case 1014:
-    //                     gauges = this.result.gauge_1014;
-    //                     break;
-    //                 case 1015:
-    //                     gauges = this.result.gauge_1015;
-    //                     break;
-    //                 case 1016:
-    //                     gauges = this.result.gauge_1016;
-    //                     break;
-    //                 case 1017:
-    //                     gauges = this.result.gauge_1017;
-    //                     break;
-    //                 case 1018:
-    //                     gauges = this.result.gauge_1018;
-    //                     break;
-    //                 case 1019:
-    //                     gauges = this.result.gauge_1019;
-    //                     break;
-    //                 case 1020:
-    //                     gauges = this.result.gauge_1020;
-    //                     break;
-    //                 case 1021:
-    //                     gauges = this.result.gauge_1021;
-    //                     break;
-    //                 case 1022:
-    //                     gauges = this.result.gauge_1022;
-    //                     break;
-    //                 case 1023:
-    //                     gauges = this.result.gauge_1023;
-    //                     break;
-    //                 case 1024:
-    //                     gauges = this.result.gauge_1024;
-    //                     break;
-    //                 case 1025:
-    //                     gauges = this.result.gauge_1025;
-    //                     break;
-    //                 case 106:
-    //                     gauges = this.result.gauge_1026;
-    //                     break;
-    //                 case 1027:
-    //                     gauges = this.result.gauge_1027;
-    //                     break;
-    //                 case 1028:
-    //                     gauges = this.result.gauge_1028;
-    //                     break;
-    //                 case 1029:
-    //                     gauges = this.result.gauge_1029;
-    //                     break;
-    //                 case 1030:
-    //                     gauges = this.result.gauge_1030;
-    //                     break;
-    //                 case 1031:
-    //                     gauges = this.result.gauge_1031;
-    //                     break;
-    //                 case 1032:
-    //                     gauges = this.result.gauge_1032;
-    //                     break;
-    //                 case 1034:
-    //                     gauges = this.result.gauge_1034;
-    //                     break;
-    //                 case 1035:
-    //                     gauges = this.result.gauge_1035;
-    //                     break;
-    //                 default:
-    //                     continue;
-    //             }
-    //             if (typeof gauges !== "undefined") {
-    //                 if (gauges[1].length !== 0) {
-    //                     tableString += `
-    //                     <table class="gauge-${j}">
-    //                         <caption>Таблица</caption>
-    //                         <tr>
-    //                             <td>Диапазон времени</td>
-    //                             <td>Значение</td>
-    //                         </tr>
-    //                     `;
-    //                     for (let i = 0; i < gauges[1].length; i++) {
-    //                         if (gauges[1][i] < 9000) {
-    //                             tableString += `
-    //                             <tr>
-    //                                 <td>${gauges[0][i]}</td>
-    //                                 <td>${gauges[1][i]}</td>
-    //                             </tr>
-    //                             `;
-    //                         }
-    //                     }
-    //                     tableString += `</table>`;
-    //                 }
-    //             }
-    //         }
-    //         tableString += `
-    //         <b class="info">Выберите пункт, для которого нужно отобразить значения</b>
-    //         `;
-    //         return tableString;
-    //     } else {
-    //         return tableString += `<b>За этот период нет данных</b>`;
-    //     }
-    // }
-
     createMenu() {
         let menuString;
         menuString = ``;
@@ -170,172 +62,172 @@ class Gauges {
                 switch (this.result[i].gauge) {
                     case 1001:
                         menuString += `
-                        <li><a href="javascript:void(0);" onclick="showTable('1001');">КНС Комендантский аэродром</a></li>
+                        <li><a href="javascript:void(0);" onclick="showTable('1001');">${this.gaugeName[0]}</a></li>
                         `;
                         break;
                     case 1002:
                         menuString += `
-                        <li><a href="javascript:void(0);" onclick="showTable('1002');">Северная станция аэрации</a></li>
+                        <li><a href="javascript:void(0);" onclick="showTable('1002');">${this.gaugeName[1]}</a></li>
                         `;
                         break;
                     case 1003:
                         menuString += `
-                        <li><a href="javascript:void(0);" onclick="showTable('1003');">КОС Кронштадт</a></li>
+                        <li><a href="javascript:void(0);" onclick="showTable('1003');">${this.gaugeName[2]}</a></li>
                         `;
                         break;
                     case 1004:
                         menuString += `
-                        <li><a href="javascript:void(0);" onclick="showTable('1004');">ВНС Песочная</a></li>
+                        <li><a href="javascript:void(0);" onclick="showTable('1004');">${this.gaugeName[3]}</a></li>
                         `;
                         break;
                     case 1005:
                         menuString += `
-                        <li><a href="javascript:void(0);" onclick="showTable('1005');">ВНС Парнас</a></li>
+                        <li><a href="javascript:void(0);" onclick="showTable('1005');">${this.gaugeName[4]}</a></li>
                         `;
                         break;
                     case 1006:
                         menuString += `
-                        <li><a href="javascript:void(0);" onclick="showTable('1006');">ВНС Ломоносов</a></li>
+                        <li><a href="javascript:void(0);" onclick="showTable('1006');">${this.gaugeName[5]}</a></li>
                         `;
                         break;
                     case 1007:
                         menuString += `
-                        <li><a href="javascript:void(0);" onclick="showTable('1007');">ВНС Заячий Ремиз</a></li>
+                        <li><a href="javascript:void(0);" onclick="showTable('1007');">${this.gaugeName[6]}</a></li>
                         `;
                         break;
                     case 1008:
                         menuString += `
-                        <li><a href="javascript:void(0);" onclick="showTable('1008');">Красносельская станция аэрации</a></li>
+                        <li><a href="javascript:void(0);" onclick="showTable('1008');">${this.gaugeName[7]}</a></li>
                         `;
                         break;
                     case 1009:
                         menuString += `
-                        <li><a href="javascript:void(0);" onclick="showTable('1009');">Юго-Западные очистные сооружения</a></li>
+                        <li><a href="javascript:void(0);" onclick="showTable('1009');">${this.gaugeName[8]}</a></li>
                         `;
                         break;
                     case 1010:
                         menuString += `
-                        <li><a href="javascript:void(0);" onclick="showTable('1010');">ВС Колпинская</a></li>
+                        <li><a href="javascript:void(0);" onclick="showTable('1010');">${this.gaugeName[9]}</a></li>
                         `;
                         break;
                     case 1011:
                         menuString += `
-                        <li><a href="javascript:void(0);" onclick="showTable('1011');">ВНС 4-й подъем</a></li>
+                        <li><a href="javascript:void(0);" onclick="showTable('1011');">${this.gaugeName[10]}</a></li>
                         `;
                         break;
                     case 1012:
                         menuString += `
-                        <li><a href="javascript:void(0);" onclick="showTable('1012');">КНС Московская славянка</a></li>
+                        <li><a href="javascript:void(0);" onclick="showTable('1012');">${this.gaugeName[11]}</a></li>
                         `;
                         break;
                     case 1013:
                         menuString += `
-                        <li><a href="javascript:void(0);" onclick="showTable('1013');">КОС Пушкин</a></li>
+                        <li><a href="javascript:void(0);" onclick="showTable('1013');">${this.gaugeName[12]}</a></li>
                         `;
                         break;
                     case 1014:
                         menuString += `
-                        <li><a href="javascript:void(0);" onclick="showTable('1014');">Северная ВС</a></li>
+                        <li><a href="javascript:void(0);" onclick="showTable('1014');">${this.gaugeName[13]}</a></li>
                         `;
                         break;
                     case 1015:
                         menuString += `
-                        <li><a href="javascript:void(0);" onclick="showTable('1015');">Главная водопроводная станция 2П</a></li>
+                        <li><a href="javascript:void(0);" onclick="showTable('1015');">${this.gaugeName[14]}</a></li>
                         `;
                         break;
                     case 1016:
                         menuString += `
-                        <li><a href="javascript:void(0);" onclick="showTable('1016');">ВС Дудерговская</a></li>
+                        <li><a href="javascript:void(0);" onclick="showTable('1016');">${this.gaugeName[15]}</a></li>
                         `;
                         break;
                     case 1017:
                         menuString += `
-                        <li><a href="javascript:void(0);" onclick="showTable('1017');">Стационарный снегоплавильный пункт</a></li>
+                        <li><a href="javascript:void(0);" onclick="showTable('1017');">${this.gaugeName[16]}</a></li>
                         `;
                         break;
                     case 1018:
                         menuString += `
-                        <li><a href="javascript:void(0);" onclick="showTable('1018');">КОС Зеленогорск</a></li>
+                        <li><a href="javascript:void(0);" onclick="showTable('1018');">${this.gaugeName[17]}</a></li>
                         `;
                         break;
                     case 1019:
                         menuString += `
-                        <li><a href="javascript:void(0);" onclick="showTable('1019');">КОС Репино</a></li>
+                        <li><a href="javascript:void(0);" onclick="showTable('1019');">${this.gaugeName[18]}</a></li>
                         `;
                         break;
                     case 1020:
                         menuString += `
-                        <li><a href="javascript:void(0);" onclick="showTable('1020');">КНС Иловые площадки</a></li>
+                        <li><a href="javascript:void(0);" onclick="showTable('1020');">${this.gaugeName[19]}</a></li>
                         `;
                         break;
                     case 1021:
                         menuString += `
-                        <li><a href="javascript:void(0);" onclick="showTable('1021');">ВНС Кушелевская</a></li>
+                        <li><a href="javascript:void(0);" onclick="showTable('1021');">${this.gaugeName[20]}</a></li>
                         `;
                         break;
                     case 1022:
                         menuString += `
-                        <li><a href="javascript:void(0);" onclick="showTable('1022');">ВНС Муринская</a></li>
+                        <li><a href="javascript:void(0);" onclick="showTable('1022');">${this.gaugeName[21]}</a></li>
                         `;
                         break;
                     case 1023:
                         menuString += `
-                        <li><a href="javascript:void(0);" onclick="showTable('1023');">ВНС Стрельна</a></li>
+                        <li><a href="javascript:void(0);" onclick="showTable('1023');">${this.gaugeName[22]}</a></li>
                         `;
                         break;
                     case 1024:
                         menuString += `
-                        <li><a href="javascript:void(0);" onclick="showTable('1024');">Центральная станция аэрации</a></li>
+                        <li><a href="javascript:void(0);" onclick="showTable('1024');">${this.gaugeName[23]}</a></li>
                         `;
                         break;
                     case 1025:
                         menuString += `
-                        <li><a href="javascript:void(0);" onclick="showTable('1025');">КОС Сестрорецк</a></li>
+                        <li><a href="javascript:void(0);" onclick="showTable('1025');">${this.gaugeName[24]}</a></li>
                         `;
                         break;
                     case 1026:
                         menuString += `
-                        <li><a href="javascript:void(0);" onclick="showTable('1026');">ВС Волковская</a></li>
+                        <li><a href="javascript:void(0);" onclick="showTable('1026');">${this.gaugeName[25]}</a></li>
                         `;
                         break;
                     case 1027:
                         menuString += `
-                        <li><a href="javascript:void(0);" onclick="showTable('1027');">ВНС Московская</a></li>
+                        <li><a href="javascript:void(0);" onclick="showTable('1027');">${this.gaugeName[26]}</a></li>
                         `;
                         break;
                     case 1028:
                         menuString += `
-                        <li><a href="javascript:void(0);" onclick="showTable('1028');">Южная ВС</a></li>
+                        <li><a href="javascript:void(0);" onclick="showTable('1028');">${this.gaugeName[27]}</a></li>
                         `;
                         break;
                     case 1029:
                         menuString += `
-                        <li><a href="javascript:void(0);" onclick="showTable('1029');">КОС Металлострой</a></li>
+                        <li><a href="javascript:void(0);" onclick="showTable('1029');">${this.gaugeName[28]}</a></li>
                         `;
                         break;
                     case 1030:
                         menuString += `
-                        <li><a href="javascript:void(0);" onclick="showTable('1030');">ВНС Пулковская</a></li>
+                        <li><a href="javascript:void(0);" onclick="showTable('1030');">${this.gaugeName[29]}</a></li>
                         `;
                         break;
                     case 1031:
                         menuString += `
-                        <li><a href="javascript:void(0);" onclick="showTable('1031');">ПНС Волхонка</a></li>
+                        <li><a href="javascript:void(0);" onclick="showTable('1031');">${this.gaugeName[30]}</a></li>
                         `;
                         break;
                     case 1032:
                         menuString += `
-                        <li><a href="javascript:void(0);" onclick="showTable('1032');">ВНС Горская</a></li>
+                        <li><a href="javascript:void(0);" onclick="showTable('1032');">${this.gaugeName[31]}</a></li>
                         `;
                         break;
                     case 1034:
                         menuString += `
-                        <li><a href="javascript:void(0);" onclick="showTable('1034');">ФГБУ СЗУГМС</a></li>
+                        <li><a href="javascript:void(0);" onclick="showTable('1034');">${this.gaugeName[32]}</a></li>
                         `;
                         break;
                     case 1035:
                         menuString += `
-                        <li><a href="javascript:void(0);" onclick="showTable('1034');">ГГО Воейково</a></li>
+                        <li><a href="javascript:void(0);" onclick="showTable('1034');">${this.gaugeName[33]}</a></li>
                         `;
                         break;
                     default:
