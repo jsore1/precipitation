@@ -340,11 +340,12 @@ class Gauges {
                         break;
                     default:
                         continue;
+                    }
             }
-        }
-        return menuString;
-    } else {
+            return menuString;
+        } else {
           return menuString = ``;
+        }
     }
 }
 
